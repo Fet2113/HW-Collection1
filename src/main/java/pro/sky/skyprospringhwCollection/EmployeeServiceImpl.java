@@ -2,21 +2,37 @@ package pro.sky.skyprospringhwCollection;
 
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
-public class EmployeeServiceImpl {
+public class EmployeeServiceImpl implements EmployeeService {
 
-    Employee[] employee = new Employee[10];
+    List<Employee> employees = List.of(
+            new Employee(
+                    "Цадкин",
+                    "Мирослав"),
+            new Employee("Ласынов", "Тимур"),
+            new Employee("Симаков", "Дмитрий"),
+            new Employee("Коростылев", "Сергей"),
+            new Employee("Иванов", "Евгений"),
+            new Employee("Штефан", "Виктор"),
+            new Employee("Параничев", "Александр"),
+            new Employee("Полякова", "Римма"),
+            new Employee("Ильин", "Евгений"),
+            new Employee("Попко", "Антон")
+    );
+@Override
+    public String getEmployee(Integer number) throws BadEmployeeNumberExeption {
+        final Employee employee;
+        if (number >= employees.size()) {
+            throw new BadEmployeeNumberExeption("ошибка");
+        }
+        employee = employees.get(number);
+        final String employeeDescription = ""
+                + employee.getFirstName() + ""
+                + employee.getLastName() + "";
+        return employeeDescription;
 
-    {
-        employee[0] = new Employee("Цадкин", "Мирослав");
-        employee[1] = new Employee("Ласынов", "Тимур");
-        employee[2] = new Employee("Симаков", "Дмитрий");
-        employee[3] = new Employee("Коростылев", "Сергей");
-        employee[4] = new Employee("Иванов", "Евгений");
-        employee[5] = new Employee("Штефан", "Виктор");
-        employee[6] = new Employee("Параничев", "Александр");
-        employee[7] = new Employee("Полякова", "Римма");
-        employee[8] = new Employee("Ильин", "Евгений");
-        employee[9] = new Employee("Попко", "Антон");
     }
 }
+
