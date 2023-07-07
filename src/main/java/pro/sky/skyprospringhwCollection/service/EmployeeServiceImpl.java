@@ -1,11 +1,15 @@
-package pro.sky.skyprospringhwCollection;
+package pro.sky.skyprospringhwCollection.service;
 
 import org.springframework.stereotype.Service;
+import pro.sky.skyprospringhwCollection.exeption.BadEmployeeNumberExeption;
+import pro.sky.skyprospringhwCollection.model.Employee;
 
 import java.util.List;
 
 @Service
 public class EmployeeServiceImpl implements EmployeeService {
+    final Integer limitEmployee = 10;
+
 
     List<Employee> employees = List.of(
             new Employee(
@@ -21,6 +25,7 @@ public class EmployeeServiceImpl implements EmployeeService {
             new Employee("Ильин", "Евгений"),
             new Employee("Попко", "Антон")
     );
+
 @Override
     public String getEmployee(Integer number) throws BadEmployeeNumberExeption {
         final Employee employee;

@@ -1,4 +1,4 @@
-package pro.sky.skyprospringhwCollection;
+package pro.sky.skyprospringhwCollection.model;
 
 import java.util.Objects;
 

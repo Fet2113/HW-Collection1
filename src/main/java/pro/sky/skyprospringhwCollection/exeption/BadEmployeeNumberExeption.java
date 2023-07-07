@@ -1,4 +1,4 @@
-package pro.sky.skyprospringhwCollection;
+package pro.sky.skyprospringhwCollection.exeption;
 
 public class BadEmployeeNumberExeption extends RuntimeException{
     public BadEmployeeNumberExeption(String message) {
