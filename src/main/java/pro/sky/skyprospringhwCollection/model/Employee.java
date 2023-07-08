@@ -1,9 +1,9 @@
-package pro.sky.skyprospringhwCollection;
+package pro.sky.skyprospringhwCollection.model;
 
 import java.util.Objects;
 
 public class Employee {
-    private final String firstName  ;
+    private final String firstName;
     private final String lastName;
 
     public Employee(String firstName, String lastName) {
